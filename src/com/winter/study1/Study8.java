@@ -22,14 +22,16 @@ public class Study8 {
 			System.out.println("1. 단발 2.점사");
 			int select = sc.nextInt();
 			System.out.println(select);
+			int count=10;
+			String sound="타타탕";
 			if(select ==1) {
-				for(int j=0;j<30;j++) {
-					System.out.println(j+1+"번 탕");
-				}//안쪽 for 끝
-			}else {
-				for(int j=0;j<10;j++) {
-					System.out.println(j+1+ "번 타타탕");
-				}//안쪽 for 끝
+				count=30;
+				sound="탕";
+			}
+			
+			//for
+			for(int j=0;j<count;j++) {
+				System.out.println(sound);
 			}
 		}
 		
