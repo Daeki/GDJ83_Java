@@ -4,6 +4,26 @@ import java.util.Scanner;
 
 public class StudentService {
 
+	// findByNum 일치하는 학생의 객체를 리턴
+	public Student findByNum(Student[] students) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("번호 입력");
+		int n = sc.nextInt();
+
+		Student student = null;
+
+		for (int i = 0; i < students.length; i++) {
+			if (n == students[i].num) {
+				student = students[i];
+				break;
+				// return students[i];
+			}
+		}
+
+		return student;
+
+	}
+
 	// makeStudent
 	public Student[] makeStudent() {
 		Scanner sc = new Scanner(System.in);
