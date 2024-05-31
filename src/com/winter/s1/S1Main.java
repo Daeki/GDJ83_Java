@@ -1,19 +1,15 @@
 package com.winter.s1;
 
-import com.winter.s2.Korea;
+import com.winter.s2.MidStudent;
 
 public class S1Main {
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 
-		Korea korea = new Korea();
+		MidStudent ms = new MidStudent();
 
-		korea.setPop(20);
-
-		int p = korea.getPop();
-		System.out.println(p);
-
-		// korea.name="";
+		ms.info();
 
 	}
 

@@ -4,21 +4,29 @@ public class S4Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// 클래스변수
-		// 클래스명.변수명
+		Tv tv = new Tv();
+		tv.brand = "Samsung";
+		tv.price = 500;
+		tv.point = 50;
+		tv.size = 100;
 
-		// Car.COMPANY = "";
-		System.out.println(Car.COMPANY);
+		Computer computer = new Computer();
+		computer.brand = "Apple";
+		computer.price = 300;
+		computer.point = 30;
+		computer.cpu = "M3";
 
-		// 클래스명.메서드명();
-		Car.info();
+		Phone phone = new Phone();
+		phone.brand = "LG";
+		phone.price = 150;
+		phone.point = 15;
+		phone.color = "Pink";
 
-		System.out.println(Math.E);
+		Customer customer = new Customer();
+		customer.don = 1000;
+		customer.point = 0;
 
-		double b = Math.abs(1.2);
-		System.out.println(b);
-
-		// Bird bird = new Bird();
+		customer.buy(computer);
 
 	}
 
