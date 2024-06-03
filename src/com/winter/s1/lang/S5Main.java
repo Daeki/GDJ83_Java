@@ -25,7 +25,7 @@ public class S5Main {
 		}
 
 		String s = String.valueOf(10.2);
-		System.out.println(s);
+		System.out.println(10.2 + "");
 
 	}
 
