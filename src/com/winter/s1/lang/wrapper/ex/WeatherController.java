@@ -25,7 +25,8 @@ public class WeatherController {
 		while (flag) {
 			System.out.println("1. 날씨전체정보출력");
 			System.out.println("2. 날씨정보검색");
-			System.out.println("3. 프로그램종료");
+			System.out.println("3. 날씨정보추가");
+			System.out.println("4. 프로그램종료");
 			int select = sc.nextInt();
 			if (select == 1) {
 				this.weatherView.view(dtos);
@@ -35,6 +36,8 @@ public class WeatherController {
 				WeatherDTO weatherDTO = weatherService.findByCity(this.sc, this.dtos);
 				weatherView.view(weatherDTO);
 
+			} else if (select == 3) {
+				dtos = weatherService.addWeather(sc, dtos);
 			} else {
 				System.out.println("프로그램이 종료 됩니다");
 				break;

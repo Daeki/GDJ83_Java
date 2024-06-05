@@ -88,4 +88,29 @@ public class WeatherService {
 		return weatherDTO;
 	}
 
+	// 날씨정보 추가
+	// addWeather
+	// 도시명, 기온, 습도, 상태를 입력받아서 기존의 날씨정보들에 추가
+	public WeatherDTO[] addWeather(Scanner sc, WeatherDTO[] ar) {
+		WeatherDTO weatherDTO = new WeatherDTO();
+		System.out.println("도시명을 입력");
+		weatherDTO.setCity(sc.next());
+		System.out.println("기온을 입력");
+		weatherDTO.setGion(sc.nextDouble());
+		System.out.println("현재 상태 입력");
+		weatherDTO.setStatus(sc.next());
+		System.out.println("습도 입력");
+		weatherDTO.setHumidity(sc.nextInt());
+
+		WeatherDTO[] newAr = new WeatherDTO[ar.length + 1];
+		for (int i = 0; i < ar.length; i++) {
+			newAr[i] = ar[i];
+		}
+
+		newAr[ar.length] = weatherDTO;
+
+		return newAr;
+
+	}
+
 }
