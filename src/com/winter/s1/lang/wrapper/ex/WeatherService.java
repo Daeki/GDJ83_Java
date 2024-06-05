@@ -1,5 +1,7 @@
 package com.winter.s1.lang.wrapper.ex;
 
+import java.util.Scanner;
+
 public class WeatherService {
 
 	// Controller Layer
@@ -66,6 +68,24 @@ public class WeatherService {
 //		}
 
 		return dtos;
+	}
+
+	// 날씨정보를 도시명으로 검색 해당 날씨정보를 리턴
+	// findByCity
+	public WeatherDTO findByCity(Scanner sc, WeatherDTO[] ar) {
+		WeatherDTO weatherDTO = null;
+
+		System.out.println("검색할 도시명을 입력");
+		String cityName = sc.next();
+
+		for (int i = 0; i < ar.length; i++) {
+			if (cityName.equals(ar[i].getCity())) {
+				weatherDTO = ar[i];
+				break;
+			}
+		}
+
+		return weatherDTO;
 	}
 
 }
