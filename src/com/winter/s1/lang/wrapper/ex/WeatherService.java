@@ -1,6 +1,8 @@
 package com.winter.s1.lang.wrapper.ex;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class WeatherService {
 
@@ -25,9 +27,30 @@ public class WeatherService {
 		info = info.replace(",", "-");
 		// info= info.replace(" ", "");
 
-		WeatherDTO[] dtos = this.getWeathers(info);
+		WeatherDTO[] dtos = this.useTokenizer(info);// this.getWeathers(info);
 
 		return dtos;
+
+	}
+
+	private WeatherDTO[] useTokenizer(String info) {
+		WeatherDTO[] ar = new WeatherDTO[4];
+		ArrayList<WeatherDTO> arrays = new ArrayList<WeatherDTO>();
+		StringTokenizer st = new StringTokenizer(info, "-");
+		int idx = 0;
+		while (st.hasMoreTokens()) {
+			WeatherDTO weatherDTO = new WeatherDTO();
+			weatherDTO.setCity(st.nextToken().trim());
+			weatherDTO.setGion(Double.parseDouble(st.nextToken().trim()));
+			weatherDTO.setStatus(st.nextToken().trim());
+			weatherDTO.setHumidity(Integer.parseInt(st.nextToken().trim()));
+			arrays.add(weatherDTO);
+
+			ar[idx] = weatherDTO;
+			idx++;
+		}
+
+		return ar;
 
 	}
 
@@ -112,5 +135,9 @@ public class WeatherService {
 		return newAr;
 
 	}
+
+	// removeWeather
+	// 기본배열에서 하나를 삭제
+	// 도시명을 입력 받아서 일치하는 날씨 정보 삭제
 
 }

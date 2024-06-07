@@ -1,0 +1,20 @@
+package com.winter.s2.util.token;
+
+import java.util.StringTokenizer;
+
+public class TokenStudy2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String name = "a-b-c";
+
+		StringTokenizer st = new StringTokenizer(name);
+
+		while (st.hasMoreTokens()) {
+
+			System.out.println(st.nextToken("-"));
+		}
+
+	}
+
+}

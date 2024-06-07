@@ -26,7 +26,8 @@ public class WeatherController {
 			System.out.println("1. 날씨전체정보출력");
 			System.out.println("2. 날씨정보검색");
 			System.out.println("3. 날씨정보추가");
-			System.out.println("4. 프로그램종료");
+			System.out.println("4. 날씨정보삭제");
+			System.out.println("5. 프로그램종료");
 			int select = sc.nextInt();
 			if (select == 1) {
 				this.weatherView.view(dtos);
